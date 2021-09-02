@@ -1,12 +1,14 @@
 FROM adoptopenjdk:16-jre
 
+LABEL org.opencontainers.image.source=https://github.com/ttys0/docker-bungeecord
+
 RUN apt-get update && apt-get -y install curl && apt-get -y upgrade
 
 VOLUME ["/plugins", "/config"]
 WORKDIR /server
 
 ENV BUNGEE_HOME=/server
-ENV BUNGEE_BUILD=1585
+ENV BUNGEE_BUILD=1598
 ENV BUNGEE_FILE=https://ci.md-5.net/job/BungeeCord/${BUNGEE_BUILD}/artifact/bootstrap/target/BungeeCord.jar
 ENV MEMORY=512m
 

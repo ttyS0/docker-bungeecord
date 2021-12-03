@@ -33,19 +33,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Login to SKJ
-        uses: docker/login-action@v1
-        with:
-          registry: hub.skj.dev
-          username: ${{ secrets.SKJ_USERNAME }}
-          password: ${{ secrets.SKJ_TOKEN }}
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
@@ -53,9 +40,5 @@ jobs:
           platforms: linux/arm64,linux/amd64
           push: true
           tags: |
-            ttys0/bungeecord:latest
-            ttys0/bungeecord:${{ env.VERSION }}
             ghcr.io/ttys0/bungeecord:latest
             ghcr.io/ttys0/bungeecord:${{ env.VERSION }}
-            hub.skj.dev/img/bungeecord:latest
-            hub.skj.dev/img/bungeecord:${{ env.VERSION }}

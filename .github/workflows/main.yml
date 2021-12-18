@@ -1,13 +1,13 @@
 name: Build and Push Docker Image
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ main ]
     tags:
       - v*
 
 env:
-  VERSION: 1598
+  VERSION: 1623
 
 jobs:
   build-and-push-image:
@@ -40,5 +40,4 @@ jobs:
           platforms: linux/arm64,linux/amd64
           push: true
           tags: |
-            ghcr.io/ttys0/bungeecord:latest
             ghcr.io/ttys0/bungeecord:${{ env.VERSION }}

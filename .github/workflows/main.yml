@@ -7,7 +7,7 @@ on:
       - v*
 
 env:
-  VERSION: 1628
+  VERSION: 1633
 
 jobs:
   build-and-push-image:

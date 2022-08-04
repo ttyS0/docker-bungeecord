@@ -8,7 +8,7 @@ VOLUME ["/plugins", "/config"]
 WORKDIR /server
 
 ENV BUNGEE_HOME=/server
-ENV BUNGEE_BUILD=1644
+ENV BUNGEE_BUILD=1656
 ENV BUNGEE_FILE=https://ci.md-5.net/job/BungeeCord/${BUNGEE_BUILD}/artifact/bootstrap/target/BungeeCord.jar
 ENV MEMORY=512m
 
